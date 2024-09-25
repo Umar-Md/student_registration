@@ -54,3 +54,14 @@ Redux: A predictable state container for JavaScript apps.
 TypeScript: A typed superset of JavaScript.
 Material UI: React components for faster and easier web development.
 Bootstrap: CSS framework for building responsive web apps.
+
+## Screenshots
+Interface of the app
+![Screenshot (29)](https://github.com/user-attachments/assets/e97d6979-9680-4c44-a3ea-446990feb5e9)
+If any fields are left empty displays error
+![Screenshot (30)](https://github.com/user-attachments/assets/044f27c0-6f18-41a2-8672-35dec033453f)
+After successfully submitting the form
+![Screenshot (31)](https://github.com/user-attachments/assets/3185c28d-1480-4974-bed2-d6d3289943c7)
+
+
+
