@@ -9,3 +9,8 @@ This project is a React-based web application for managing student information u
 - **Bootstrap** and **Material UI** for styling.
 - **Form Validation** on submit with error messages.
 - **Console Logging** on successful submission.
+
+## Prerequisites
+
+- Node.js installed on your system.
+- npm or yarn as a package manager.
