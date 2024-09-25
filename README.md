@@ -41,3 +41,16 @@ City: Text field
 State: Text field
 Postal Code: Text field
 Country: Text field
+## Form Validation
+Validation is performed when the user clicks the Submit button. If any fields are empty or invalid, error messages are displayed under each respective field.
+
+**Example:**
+If the First Name field is empty, the error message First Name is required will be shown.
+Upon successful validation, the form data is logged to the console.
+
+## Technologies Used
+React: A JavaScript library for building user interfaces.
+Redux: A predictable state container for JavaScript apps.
+TypeScript: A typed superset of JavaScript.
+Material UI: React components for faster and easier web development.
+Bootstrap: CSS framework for building responsive web apps.
