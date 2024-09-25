@@ -14,3 +14,9 @@ This project is a React-based web application for managing student information u
 
 - Node.js installed on your system.
 - npm or yarn as a package manager.
+
+##State Management
+- The state is managed using Redux. The form values and errors are stored in the Redux store. The slice is located in redux/slices/studentSlice.ts and contains the following actions:
+- setFormValues: Updates the form field values in the store.
+- setErrors: Sets the validation errors in the store.
+- resetFormValues: Resets the form values to initial state.
