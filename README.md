@@ -1,67 +1,50 @@
-# student_registration
-This project is a React-based web application for managing student information using a form. The form allows users to input various student details, such as personal information, contact information, education details, and address, and stores the data using Redux for state management. The form includes validation for each field and displays relevant error messages when fields are left empty.
+# React + TypeScript + Vite
 
-## Features
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- **React** for building the user interface.
-- **Redux** for managing the form state.
-- **TypeScript** for type safety.
-- **Bootstrap** and **Material UI** for styling.
-- **Form Validation** on submit with error messages.
-- **Console Logging** on successful submission.
+Currently, two official plugins are available:
 
-## Prerequisites
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Node.js installed on your system.
-- npm or yarn as a package manager.
+## Expanding the ESLint configuration
 
-## State Management
-- The state is managed using Redux. The form values and errors are stored in the Redux store. The slice is located in redux/slices/studentSlice.ts and contains the following actions:
-- setFormValues: Updates the form field values in the store.
-- setErrors: Sets the validation errors in the store.
-- resetFormValues: Resets the form values to initial state.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Student Form Fields
-The following fields are included in the form:
+- Configure the top-level `parserOptions` property like this:
 
-First Name: Text field
-Last Name: Text field
-Gender: Dropdown with Male and Female options
-Date of Birth: Date picker
-Student ID: Text field
-Email: Text field with email validation
-Phone Number: Text field
-Enrollment Date: Date picker
-Course: Text field
-Grade Level: Text field
-CGPA: Text field
-Address Information:
-Street Address: Text field
-City: Text field
-State: Text field
-Postal Code: Text field
-Country: Text field
-## Form Validation
-Validation is performed when the user clicks the Submit button. If any fields are empty or invalid, error messages are displayed under each respective field.
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-**Example:**
-If the First Name field is empty, the error message First Name is required will be shown.
-Upon successful validation, the form data is logged to the console.
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-## Technologies Used
-React: A JavaScript library for building user interfaces.
-Redux: A predictable state container for JavaScript apps.
-TypeScript: A typed superset of JavaScript.
-Material UI: React components for faster and easier web development.
-Bootstrap: CSS framework for building responsive web apps.
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-## Screenshots
-Interface of the app
-![Screenshot (29)](https://github.com/user-attachments/assets/e97d6979-9680-4c44-a3ea-446990feb5e9)
-If any fields are left empty displays error
-![Screenshot (30)](https://github.com/user-attachments/assets/044f27c0-6f18-41a2-8672-35dec033453f)
-After successfully submitting the form
-![Screenshot (31)](https://github.com/user-attachments/assets/3185c28d-1480-4974-bed2-d6d3289943c7)
-
-
-
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
